@@ -80,7 +80,7 @@
 
           <div class="tips">
             <span>首次登录的手机号将自动创建账号</span>
-            <span class="test-code">点击获取验证码后，请到后端控制台查看 [LOGIN_CODE]</span>
+            <span class="test-code">验证码将通过短信发送至你的手机</span>
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@ const handleSendCode = async () => {
   await formRef.value.validateField('phone')
   try {
     await userStore.sendCode(form.phone)
-    ElMessage.success('验证码已生成，请查看后端控制台')
+    ElMessage.success('验证码已发送，请查收短信')
     countdown.value = 60
     const timer = setInterval(() => {
       countdown.value--

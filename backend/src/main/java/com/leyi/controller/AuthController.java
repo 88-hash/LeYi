@@ -30,7 +30,7 @@ public class AuthController {
         String phone = normalize(params.get("phone"));
         validatePhone(phone);
         userService.sendCode(phone);
-        return Result.success("验证码已生成，请查看后端控制台", null);
+        return Result.success("验证码已发送，请查收短信", null);
     }
 
     @PostMapping("/login")

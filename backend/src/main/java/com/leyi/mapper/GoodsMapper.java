@@ -11,6 +11,7 @@ public interface GoodsMapper {
     List<Goods> findList(@Param("categoryId") Long categoryId,
                          @Param("categoryIds") List<Long> categoryIds,
                          @Param("keyword") String keyword,
+                         @Param("sort") String sort,
                          @Param("isOnSale") Integer isOnSale,
                          @Param("offset") Integer offset,
                          @Param("limit") Integer limit);

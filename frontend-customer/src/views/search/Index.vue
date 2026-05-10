@@ -81,9 +81,9 @@
           </div>
         </header>
 
-        <div v-if="sortedGoodsList.length > 0" class="goods-grid">
+        <div v-if="displayGoodsList.length > 0" class="goods-grid">
           <article
-            v-for="goods in sortedGoodsList"
+            v-for="goods in displayGoodsList"
             :key="goods.id"
             class="goods-card"
             @click="goDetail(goods.id)"
@@ -156,7 +156,7 @@ const suggestKeywords = ['巧克力', '坚果礼盒', '果干', '薯片', '饮�
 
 const sortOptions = [
   { label: '综合推荐', value: 'default' },
-  { label: '销量优先', value: 'sales' },
+  { label: '销量优先', value: 'sales_desc' },
   { label: '价格从低到高', value: 'price_asc' },
   { label: '价格从高到低', value: 'price_desc' }
 ]
@@ -170,20 +170,7 @@ const frequentTabs = [
 const normalizedKeyword = computed(() => `${keyword.value || ''}`.replace(/\s+/g, ''))
 const isFrequentMode = computed(() => normalizedKeyword.value === '常买')
 
-const sortedGoodsList = computed(() => {
-  const source = [...goodsList.value]
-  if (sortBy.value === 'price_asc') {
-    return source.sort((a, b) => Number(a.price || 0) - Number(b.price || 0))
-  }
-  if (sortBy.value === 'price_desc') {
-    return source.sort((a, b) => Number(b.price || 0) - Number(a.price || 0))
-  }
-  if (sortBy.value === 'sales') {
-    const readSales = (item) => Number(item.sales || item.saleCount || item.salesVolume || 0)
-    return source.sort((a, b) => readSales(b) - readSales(a))
-  }
-  return source
-})
+const displayGoodsList = computed(() => goodsList.value)
 
 const displayFrequentList = computed(() => {
   const source = [...frequentList.value]
@@ -218,7 +205,8 @@ const fetchSearchGoods = async () => {
       keyword: keyword.value,
       pageNum: pageNum.value,
       pageSize: pageSize.value,
-      isOnSale: 1
+      isOnSale: 1,
+      sort: sortBy.value
     })
     goodsList.value = res.data?.list || []
     total.value = Number(res.data?.total || 0)
@@ -388,6 +376,17 @@ watch(
     await fetchByMode()
   }
 )
+
+watch(sortBy, async () => {
+  if (isFrequentMode.value) {
+    return
+  }
+  if (pageNum.value !== 1) {
+    pageNum.value = 1
+    return
+  }
+  await fetchSearchGoods()
+})
 
 onMounted(fetchByMode)
 </script>

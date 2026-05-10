@@ -24,6 +24,7 @@ public class Goods {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private String categoryName;
+    private Long salesCount;
     private List<GoodsImage> images;
 }
 

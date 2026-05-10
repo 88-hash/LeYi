@@ -1,10 +1,20 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { adminLogin, getAdminInfo } from '@/api'
+import { adminLogin } from '@/api'
+
+const readStoredAdminInfo = () => {
+  try {
+    return JSON.parse(localStorage.getItem('adminInfo') || '{}')
+  } catch {
+    localStorage.removeItem('adminInfo')
+    localStorage.removeItem('adminToken')
+    return {}
+  }
+}
 
 export const useAdminStore = defineStore('admin', () => {
   const token = ref(localStorage.getItem('adminToken') || '')
-  const adminInfo = ref(JSON.parse(localStorage.getItem('adminInfo') || '{}'))
+  const adminInfo = ref(readStoredAdminInfo())
 
   const login = async (phone, password) => {
     const res = await adminLogin({ phone, password })

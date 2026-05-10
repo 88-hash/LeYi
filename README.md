@@ -41,12 +41,17 @@
 
 ### 1. 数据库初始化
 
+答辩演示建议按下面两步执行，先建基础库，再导入演示订单与统计数据：
+
 ```bash
-# 登录MySQL，执行初始化脚本
+# 第一步：初始化基础数据
 mysql -u root -p < database/init.sql
+
+# 第二步：导入答辩演示数据
+mysql -u root -p < database/test_data.sql
 ```
 
-或者在MySQL客户端中执行 `database/init.sql` 文件内容。
+或者在 MySQL 客户端中依次执行 `database/init.sql` 和 `database/test_data.sql`。
 
 ### 2. 后端启动
 
@@ -150,7 +155,8 @@ WHERE `phone` IN ('13800000001', '13800000002');
 2. 后端需要Java 17+环境
 3. 前端需要Node.js 16+环境
 4. 登录前需要先获取验证码，默认不再提供固定万能验证码
-5. 文件上传目录默认为 `./uploads`
+5. 当前仓库不再自带商品演示图片，商品图请在管理端自行上传
+6. 上传后的商品图片会真实写入 `backend/uploads/goods/`，并通过 `/uploads/goods/<文件名>` 直接访问
 
 ## 配置说明
 
@@ -165,6 +171,9 @@ spring:
 jwt:
   secret: your-secret-key
   expiration: 604800000  # 7天
+
+upload:
+  path: uploads
 ```
 
 ### 前端代理配置 (vite.config.js)
@@ -210,6 +219,13 @@ ADD COLUMN `signature` VARCHAR(80) DEFAULT '' COMMENT '个性签名' AFTER `avat
 ```
 
 升级后，用户资料接口以 `name + avatar + signature` 作为统一契约，前端不再以本地缓存伪装后端保存成功。
+
+## 答辩图片说明
+
+- 项目默认商品数据不再绑定任何预置图片，避免仓库内旧图与数据库引用不一致
+- 如果需要商品图演示，请登录后台“商品管理”自行上传
+- 上传成功后，图片文件会真实落地到 `backend/uploads/goods/`
+- 上传返回的相对路径会直接保存到数据库，前后端页面都会自动读取并展示
 
 
 

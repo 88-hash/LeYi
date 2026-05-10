@@ -1,0 +1,343 @@
+- generic [ref=e211]:
+  - complementary [ref=e212]:
+    - generic [ref=e213]:
+      - img [ref=e215]
+      - generic [ref=e217]: 乐逸零食店
+    - menubar [ref=e218]:
+      - menuitem "数据概览" [ref=e219] [cursor=pointer]:
+        - img [ref=e221]
+        - generic [ref=e223]: 数据概览
+      - menuitem "订单核销" [ref=e224] [cursor=pointer]:
+        - img [ref=e226]
+        - generic [ref=e228]: 订单核销
+      - menuitem "订单管理" [ref=e229] [cursor=pointer]:
+        - img [ref=e231]
+        - generic [ref=e233]: 订单管理
+      - menuitem "商品管理" [active] [ref=e234] [cursor=pointer]:
+        - img [ref=e236]
+        - generic [ref=e238]: 商品管理
+      - menuitem "分类管理" [ref=e239] [cursor=pointer]:
+        - img [ref=e241]
+        - generic [ref=e243]: 分类管理
+      - menuitem "店员管理" [ref=e244] [cursor=pointer]:
+        - img [ref=e246]
+        - generic [ref=e248]: 店员管理
+  - main [ref=e249]:
+    - generic [ref=e250]:
+      - heading "商品管理" [level=2] [ref=e491]
+      - generic [ref=e253]:
+        - generic [ref=e254]: 店长
+        - generic [ref=e493]: 店长
+        - button "退出" [ref=e255] [cursor=pointer]:
+          - generic [ref=e256]:
+            - img [ref=e258]
+            - text: 退出
+    - generic [ref=e495]:
+      - generic [ref=e496]:
+        - generic [ref=e497]:
+          - generic [ref=e499] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e501]
+              - generic [ref=e502]: 商品分类
+            - img [ref=e505]
+          - generic [ref=e508] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e510]
+              - generic [ref=e511]: 上架状态
+            - img [ref=e514]
+          - textbox "搜索商品名称/条码" [ref=e518]
+          - button "搜索" [ref=e519] [cursor=pointer]:
+            - generic [ref=e520]: 搜索
+        - button "新增商品" [ref=e521] [cursor=pointer]:
+          - generic [ref=e522]:
+            - img [ref=e524]
+            - text: 新增商品
+      - generic [ref=e526]:
+        - generic [ref=e528]:
+          - table [ref=e530]:
+            - rowgroup [ref=e540]:
+              - row "商品图片 商品名称 分类 价格 库存 条码 状态 操作" [ref=e541]:
+                - columnheader "商品图片" [ref=e542]:
+                  - generic [ref=e543]: 商品图片
+                - columnheader "商品名称" [ref=e544]:
+                  - generic [ref=e545]: 商品名称
+                - columnheader "分类" [ref=e546]:
+                  - generic [ref=e547]: 分类
+                - columnheader "价格" [ref=e548]:
+                  - generic [ref=e549]: 价格
+                - columnheader "库存" [ref=e550]:
+                  - generic [ref=e551]: 库存
+                - columnheader "条码" [ref=e552]:
+                  - generic [ref=e553]: 条码
+                - columnheader "状态" [ref=e554]:
+                  - generic [ref=e555]: 状态
+                - columnheader "操作" [ref=e556]:
+                  - generic [ref=e557]: 操作
+          - table [ref=e562]:
+            - rowgroup [ref=e572]:
+              - row "商品图片 奥利奥原味夹心饼干 饼干 ¥12.90 52 6901668001015 上架 编辑 下架 删除" [ref=e573]:
+                - cell "商品图片" [ref=e574]:
+                  - img "商品图片" [ref=e576]
+                - cell "奥利奥原味夹心饼干" [ref=e577]:
+                  - generic [ref=e578]: 奥利奥原味夹心饼干
+                - cell "饼干" [ref=e579]:
+                  - generic [ref=e580]: 饼干
+                - cell "¥12.90" [ref=e581]:
+                  - generic [ref=e582]: ¥12.90
+                - cell "52" [ref=e583]:
+                  - generic [ref=e584]: "52"
+                - cell "6901668001015" [ref=e585]:
+                  - generic [ref=e586]: "6901668001015"
+                - cell "上架" [ref=e587]:
+                  - generic [ref=e588]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e589]:
+                  - generic [ref=e590]:
+                    - button "编辑" [ref=e591] [cursor=pointer]:
+                      - generic [ref=e592]: 编辑
+                    - button "下架" [ref=e593] [cursor=pointer]:
+                      - generic [ref=e594]: 下架
+                    - button "删除" [ref=e595] [cursor=pointer]:
+                      - generic [ref=e596]: 删除
+              - row "商品图片 趣多多曲奇饼干 饼干 ¥9.90 36 6901668002015 上架 编辑 下架 删除" [ref=e597]:
+                - cell "商品图片" [ref=e598]:
+                  - img "商品图片" [ref=e600]
+                - cell "趣多多曲奇饼干" [ref=e601]:
+                  - generic [ref=e602]: 趣多多曲奇饼干
+                - cell "饼干" [ref=e603]:
+                  - generic [ref=e604]: 饼干
+                - cell "¥9.90" [ref=e605]:
+                  - generic [ref=e606]: ¥9.90
+                - cell "36" [ref=e607]:
+                  - generic [ref=e608]: "36"
+                - cell "6901668002015" [ref=e609]:
+                  - generic [ref=e610]: "6901668002015"
+                - cell "上架" [ref=e611]:
+                  - generic [ref=e612]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e613]:
+                  - generic [ref=e614]:
+                    - button "编辑" [ref=e615] [cursor=pointer]:
+                      - generic [ref=e616]: 编辑
+                    - button "下架" [ref=e617] [cursor=pointer]:
+                      - generic [ref=e618]: 下架
+                    - button "删除" [ref=e619] [cursor=pointer]:
+                      - generic [ref=e620]: 删除
+              - row "商品图片 徐福记酥心糖 糖果 ¥15.80 42 6902083801234 上架 编辑 下架 删除" [ref=e621]:
+                - cell "商品图片" [ref=e622]:
+                  - img "商品图片" [ref=e624]
+                - cell "徐福记酥心糖" [ref=e625]:
+                  - generic [ref=e626]: 徐福记酥心糖
+                - cell "糖果" [ref=e627]:
+                  - generic [ref=e628]: 糖果
+                - cell "¥15.80" [ref=e629]:
+                  - generic [ref=e630]: ¥15.80
+                - cell "42" [ref=e631]:
+                  - generic [ref=e632]: "42"
+                - cell "6902083801234" [ref=e633]:
+                  - generic [ref=e634]: "6902083801234"
+                - cell "上架" [ref=e635]:
+                  - generic [ref=e636]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e637]:
+                  - generic [ref=e638]:
+                    - button "编辑" [ref=e639] [cursor=pointer]:
+                      - generic [ref=e640]: 编辑
+                    - button "下架" [ref=e641] [cursor=pointer]:
+                      - generic [ref=e642]: 下架
+                    - button "删除" [ref=e643] [cursor=pointer]:
+                      - generic [ref=e644]: 删除
+              - row "商品图片 阿尔卑斯棒棒糖 糖果 ¥8.50 55 6923644212345 上架 编辑 下架 删除" [ref=e645]:
+                - cell "商品图片" [ref=e646]:
+                  - img "商品图片" [ref=e648]
+                - cell "阿尔卑斯棒棒糖" [ref=e649]:
+                  - generic [ref=e650]: 阿尔卑斯棒棒糖
+                - cell "糖果" [ref=e651]:
+                  - generic [ref=e652]: 糖果
+                - cell "¥8.50" [ref=e653]:
+                  - generic [ref=e654]: ¥8.50
+                - cell "55" [ref=e655]:
+                  - generic [ref=e656]: "55"
+                - cell "6923644212345" [ref=e657]:
+                  - generic [ref=e658]: "6923644212345"
+                - cell "上架" [ref=e659]:
+                  - generic [ref=e660]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e661]:
+                  - generic [ref=e662]:
+                    - button "编辑" [ref=e663] [cursor=pointer]:
+                      - generic [ref=e664]: 编辑
+                    - button "下架" [ref=e665] [cursor=pointer]:
+                      - generic [ref=e666]: 下架
+                    - button "删除" [ref=e667] [cursor=pointer]:
+                      - generic [ref=e668]: 删除
+              - row "商品图片 乐事薯片原味 薯片 ¥7.90 38 6924743912345 上架 编辑 下架 删除" [ref=e669]:
+                - cell "商品图片" [ref=e670]:
+                  - img "商品图片" [ref=e672]
+                - cell "乐事薯片原味" [ref=e673]:
+                  - generic [ref=e674]: 乐事薯片原味
+                - cell "薯片" [ref=e675]:
+                  - generic [ref=e676]: 薯片
+                - cell "¥7.90" [ref=e677]:
+                  - generic [ref=e678]: ¥7.90
+                - cell "38" [ref=e679]:
+                  - generic [ref=e680]: "38"
+                - cell "6924743912345" [ref=e681]:
+                  - generic [ref=e682]: "6924743912345"
+                - cell "上架" [ref=e683]:
+                  - generic [ref=e684]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e685]:
+                  - generic [ref=e686]:
+                    - button "编辑" [ref=e687] [cursor=pointer]:
+                      - generic [ref=e688]: 编辑
+                    - button "下架" [ref=e689] [cursor=pointer]:
+                      - generic [ref=e690]: 下架
+                    - button "删除" [ref=e691] [cursor=pointer]:
+                      - generic [ref=e692]: 删除
+              - row "商品图片 品客薯片原味 薯片 ¥14.90 24 5053990101234 上架 编辑 下架 删除" [ref=e693]:
+                - cell "商品图片" [ref=e694]:
+                  - img "商品图片" [ref=e696]
+                - cell "品客薯片原味" [ref=e697]:
+                  - generic [ref=e698]: 品客薯片原味
+                - cell "薯片" [ref=e699]:
+                  - generic [ref=e700]: 薯片
+                - cell "¥14.90" [ref=e701]:
+                  - generic [ref=e702]: ¥14.90
+                - cell "24" [ref=e703]:
+                  - generic [ref=e704]: "24"
+                - cell "5053990101234" [ref=e705]:
+                  - generic [ref=e706]: "5053990101234"
+                - cell "上架" [ref=e707]:
+                  - generic [ref=e708]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e709]:
+                  - generic [ref=e710]:
+                    - button "编辑" [ref=e711] [cursor=pointer]:
+                      - generic [ref=e712]: 编辑
+                    - button "下架" [ref=e713] [cursor=pointer]:
+                      - generic [ref=e714]: 下架
+                    - button "删除" [ref=e715] [cursor=pointer]:
+                      - generic [ref=e716]: 删除
+              - row "商品图片 三只松鼠坚果礼盒 坚果 ¥89.00 18 6940763412345 上架 编辑 下架 删除" [ref=e717]:
+                - cell "商品图片" [ref=e718]:
+                  - img "商品图片" [ref=e720]
+                - cell "三只松鼠坚果礼盒" [ref=e721]:
+                  - generic [ref=e722]: 三只松鼠坚果礼盒
+                - cell "坚果" [ref=e723]:
+                  - generic [ref=e724]: 坚果
+                - cell "¥89.00" [ref=e725]:
+                  - generic [ref=e726]: ¥89.00
+                - cell "18" [ref=e727]:
+                  - generic [ref=e728]: "18"
+                - cell "6940763412345" [ref=e729]:
+                  - generic [ref=e730]: "6940763412345"
+                - cell "上架" [ref=e731]:
+                  - generic [ref=e732]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e733]:
+                  - generic [ref=e734]:
+                    - button "编辑" [ref=e735] [cursor=pointer]:
+                      - generic [ref=e736]: 编辑
+                    - button "下架" [ref=e737] [cursor=pointer]:
+                      - generic [ref=e738]: 下架
+                    - button "删除" [ref=e739] [cursor=pointer]:
+                      - generic [ref=e740]: 删除
+              - row "商品图片 百草味每日坚果 坚果 ¥59.90 26 6921168512345 上架 编辑 下架 删除" [ref=e741]:
+                - cell "商品图片" [ref=e742]:
+                  - img "商品图片" [ref=e744]
+                - cell "百草味每日坚果" [ref=e745]:
+                  - generic [ref=e746]: 百草味每日坚果
+                - cell "坚果" [ref=e747]:
+                  - generic [ref=e748]: 坚果
+                - cell "¥59.90" [ref=e749]:
+                  - generic [ref=e750]: ¥59.90
+                - cell "26" [ref=e751]:
+                  - generic [ref=e752]: "26"
+                - cell "6921168512345" [ref=e753]:
+                  - generic [ref=e754]: "6921168512345"
+                - cell "上架" [ref=e755]:
+                  - generic [ref=e756]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e757]:
+                  - generic [ref=e758]:
+                    - button "编辑" [ref=e759] [cursor=pointer]:
+                      - generic [ref=e760]: 编辑
+                    - button "下架" [ref=e761] [cursor=pointer]:
+                      - generic [ref=e762]: 下架
+                    - button "删除" [ref=e763] [cursor=pointer]:
+                      - generic [ref=e764]: 删除
+              - row "商品图片 可口可乐 碳酸饮料 ¥3.50 88 6901939612345 上架 编辑 下架 删除" [ref=e765]:
+                - cell "商品图片" [ref=e766]:
+                  - img "商品图片" [ref=e768]
+                - cell "可口可乐" [ref=e769]:
+                  - generic [ref=e770]: 可口可乐
+                - cell "碳酸饮料" [ref=e771]:
+                  - generic [ref=e772]: 碳酸饮料
+                - cell "¥3.50" [ref=e773]:
+                  - generic [ref=e774]: ¥3.50
+                - cell "88" [ref=e775]:
+                  - generic [ref=e776]: "88"
+                - cell "6901939612345" [ref=e777]:
+                  - generic [ref=e778]: "6901939612345"
+                - cell "上架" [ref=e779]:
+                  - generic [ref=e780]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e781]:
+                  - generic [ref=e782]:
+                    - button "编辑" [ref=e783] [cursor=pointer]:
+                      - generic [ref=e784]: 编辑
+                    - button "下架" [ref=e785] [cursor=pointer]:
+                      - generic [ref=e786]: 下架
+                    - button "删除" [ref=e787] [cursor=pointer]:
+                      - generic [ref=e788]: 删除
+              - row "商品图片 百事可乐 碳酸饮料 ¥3.50 76 6901268612345 上架 编辑 下架 删除" [ref=e789]:
+                - cell "商品图片" [ref=e790]:
+                  - img "商品图片" [ref=e792]
+                - cell "百事可乐" [ref=e793]:
+                  - generic [ref=e794]: 百事可乐
+                - cell "碳酸饮料" [ref=e795]:
+                  - generic [ref=e796]: 碳酸饮料
+                - cell "¥3.50" [ref=e797]:
+                  - generic [ref=e798]: ¥3.50
+                - cell "76" [ref=e799]:
+                  - generic [ref=e800]: "76"
+                - cell "6901268612345" [ref=e801]:
+                  - generic [ref=e802]: "6901268612345"
+                - cell "上架" [ref=e803]:
+                  - generic [ref=e804]:
+                    - generic:
+                      - generic: 上架
+                - cell "编辑 下架 删除" [ref=e805]:
+                  - generic [ref=e806]:
+                    - button "编辑" [ref=e807] [cursor=pointer]:
+                      - generic [ref=e808]: 编辑
+                    - button "下架" [ref=e809] [cursor=pointer]:
+                      - generic [ref=e810]: 下架
+                    - button "删除" [ref=e811] [cursor=pointer]:
+                      - generic [ref=e812]: 删除
+        - generic [ref=e814]:
+          - generic [ref=e815]: 共 20 条
+          - generic [ref=e818] [cursor=pointer]:
+            - generic:
+              - combobox [ref=e820]
+              - generic [ref=e821]: 10条/页
+            - img [ref=e824]
+          - button "上一页" [disabled] [ref=e826]:
+            - generic:
+              - img
+          - list [ref=e827]:
+            - listitem "第 1 页" [ref=e828]: "1"
+            - listitem "第 2 页" [ref=e829] [cursor=pointer]: "2"
+          - button "下一页" [ref=e830] [cursor=pointer]:
+            - generic:
+              - img

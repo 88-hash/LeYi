@@ -10,7 +10,7 @@ const routes = [
   {
     path: '/',
     component: () => import('@/views/layout/Index.vue'),
-    redirect: '/dashboard',
+    redirect: '//login',
     children: [
       {
         path: 'dashboard',
@@ -69,9 +69,19 @@ const router = createRouter({
   routes
 })
 
+const readStoredAdminInfo = () => {
+  try {
+    return JSON.parse(localStorage.getItem('adminInfo') || '{}')
+  } catch {
+    localStorage.removeItem('adminInfo')
+    localStorage.removeItem('adminToken')
+    return {}
+  }
+}
+
 router.beforeEach((to, from, next) => {
   const token = localStorage.getItem('adminToken')
-  const adminInfo = JSON.parse(localStorage.getItem('adminInfo') || '{}')
+  const adminInfo = readStoredAdminInfo()
   
   if (to.path === '/login') {
     next()

@@ -43,7 +43,7 @@
               :http-request="handleUpload"
               accept="image/png,image/jpeg"
             >
-              <img v-if="form.imageUrl" :src="form.imageUrl" class="uploaded-image" />
+              <img v-if="form.imageUrl" :src="form.imageUrl" class="uploaded-image" @error="handlePreviewError" />
               <el-icon v-else class="upload-icon"><Plus /></el-icon>
             </el-upload>
           </el-form-item>
@@ -88,6 +88,7 @@ const formRef = ref()
 const submitting = ref(false)
 const categories = ref([])
 const categoryPath = ref([])
+const ADMIN_PLACEHOLDER = '/placeholder.svg'
 
 const form = reactive({
   id: null,
@@ -142,6 +143,15 @@ const handleUpload = async ({ file }) => {
     console.error(e)
     ElMessage.error(e?.message || '上传失败')
   }
+}
+
+const handlePreviewError = (event) => {
+  const target = event?.target
+  if (!target || target.dataset.fallbackApplied === 'true') {
+    return
+  }
+  target.dataset.fallbackApplied = 'true'
+  target.src = ADMIN_PLACEHOLDER
 }
 
 const handleSubmit = async () => {

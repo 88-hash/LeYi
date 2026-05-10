@@ -36,11 +36,12 @@ public class GoodsController {
     public Result<?> list(
             @RequestParam(required = false) Long categoryId,
             @RequestParam(required = false) String keyword,
+            @RequestParam(defaultValue = "default") String sort,
             @RequestParam(required = false) Integer isOnSale,
             @RequestParam(defaultValue = "false") Boolean includeChildren,
             @RequestParam(defaultValue = "1") Integer pageNum,
             @RequestParam(defaultValue = "10") Integer pageSize) {
-        PageResult<Goods> result = goodsService.getList(categoryId, keyword, isOnSale, includeChildren, pageNum, pageSize);
+        PageResult<Goods> result = goodsService.getList(categoryId, keyword, sort, isOnSale, includeChildren, pageNum, pageSize);
         return Result.success(result);
     }
 

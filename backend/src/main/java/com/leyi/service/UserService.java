@@ -29,12 +29,21 @@ public class UserService {
     @Autowired
     private DatabaseSchemaSupport databaseSchemaSupport;
 
+    @Autowired
+    private SmsService smsService;
+
     private static final ConcurrentHashMap<String, CodeEntry> CODE_MAP = new ConcurrentHashMap<>();
 
     public void sendCode(String phone) {
         String code = String.format("%06d", (int) (Math.random() * 1_000_000));
         CODE_MAP.put(phone, new CodeEntry(code, System.currentTimeMillis() + CODE_EXPIRE_MILLIS));
-        log.info("[LOGIN_CODE] phone={} code={}", phone, code);
+        try {
+            smsService.sendLoginCode(phone, code);
+            log.info("Login verification code sent. phone={}", phone);
+        } catch (BusinessException e) {
+            CODE_MAP.remove(phone);
+            throw e;
+        }
     }
 
     public Map<String, Object> login(String phone, String code) {

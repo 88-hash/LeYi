@@ -9,6 +9,8 @@
     "query": "Lay's Classic Potato Chips",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_001.jpg",
     "status": "downloaded"
   },
   {
@@ -21,6 +23,8 @@
     "query": "Lay's Barbecue Potato Chips",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_002.jpg",
     "status": "downloaded"
   },
   {
@@ -33,6 +37,8 @@
     "query": "Lay's Sea Salt Potato Chips",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_003.jpg",
     "status": "downloaded"
   },
   {
@@ -45,6 +51,8 @@
     "query": "Pringles Original",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_004.jpg",
     "status": "downloaded"
   },
   {
@@ -52,11 +60,13 @@
     "goods_name": "品客酸奶洋葱薯片 102g",
     "file_name": "goods_005.jpg",
     "image_url": "/uploads/goods/goods_005.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/22/Pringles_Sour_Cream_%26_Onion_potato_chips%2C_Chinese_version_%2820200628122300%29.jpg",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/505/399/010/1597/front_en.55.400.jpg",
     "query": "Pringles Sour Cream Onion",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_005.jpg",
     "status": "downloaded"
   },
   {
@@ -69,6 +79,8 @@
     "query": "Ruffles Original Potato Chips",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_006.jpg",
     "status": "downloaded"
   },
   {
@@ -81,6 +93,8 @@
     "query": "Cheetos Crunchy Flamin Hot",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_007.jpg",
     "status": "downloaded"
   },
   {
@@ -88,11 +102,13 @@
     "goods_name": "Kettle海盐黑胡椒厚切薯片 60g",
     "file_name": "goods_008.jpg",
     "image_url": "/uploads/goods/goods_008.jpg",
-    "source_name": "local_category_fallback",
-    "source_url": "/uploads/goods/goods_007.jpg",
-    "query": "local:7",
-    "fallback_used": true,
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/070/816/312/1937/front_en.8.400.jpg",
+    "query": "Kettle Sea Salt Cracked Pepper Chips",
+    "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_008.jpg",
     "status": "downloaded"
   },
   {
@@ -101,10 +117,12 @@
     "file_name": "goods_009.jpg",
     "image_url": "/uploads/goods/goods_009.jpg",
     "source_name": "local_parent_fallback",
-    "source_url": "/uploads/goods/goods_008.jpg",
-    "query": "local:8",
+    "source_url": "/uploads/goods/goods_016.jpg",
+    "query": "local:16",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_009.jpg",
     "status": "downloaded"
   },
   {
@@ -117,6 +135,8 @@
     "query": "local:9",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_010.jpg",
     "status": "downloaded"
   },
   {
@@ -129,6 +149,8 @@
     "query": "local:10",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_011.jpg",
     "status": "downloaded"
   },
   {
@@ -141,6 +163,8 @@
     "query": "local:11",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_012.jpg",
     "status": "downloaded"
   },
   {
@@ -153,6 +177,8 @@
     "query": "Doritos Nacho Cheese",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_013.jpg",
     "status": "downloaded"
   },
   {
@@ -165,6 +191,8 @@
     "query": "corn chips snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_014.jpg",
     "status": "downloaded"
   },
   {
@@ -177,6 +205,8 @@
     "query": "butter popcorn snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_015.jpg",
     "status": "downloaded"
   },
   {
@@ -184,11 +214,13 @@
     "goods_name": "Smartfood白切达爆米花 60g",
     "file_name": "goods_016.jpg",
     "image_url": "/uploads/goods/goods_016.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Smartfood_White_Cheddar_Cheese_Popcorn_textures_3_February_2025_Philippines3.jpg",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/002/840/002/0008/front_en.70.400.jpg",
     "query": "Smartfood White Cheddar Popcorn",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_016.jpg",
     "status": "downloaded"
   },
   {
@@ -201,6 +233,8 @@
     "query": "Oreo Original Sandwich Cookies",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_017.jpg",
     "status": "downloaded"
   },
   {
@@ -213,6 +247,8 @@
     "query": "sandwich cookies strawberry",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_018.jpg",
     "status": "downloaded"
   },
   {
@@ -225,6 +261,8 @@
     "query": "Oreo Chocolate Sandwich Cookies",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_019.jpg",
     "status": "downloaded"
   },
   {
@@ -233,10 +271,12 @@
     "file_name": "goods_020.jpg",
     "image_url": "/uploads/goods/goods_020.jpg",
     "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/2021-02-09_14_26_52_A_Ritz_Cracker_Sandwich_with_Cheese_Flavored_Filling_in_the_Dulles_section_of_Sterling%2C_Loudoun_County%2C_Virginia.jpg",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/90/2026-03-16_14_48_36_Ritz_Bits_Cheese_Sandwich_Cracker_in_Westampton_Township%2C_Burlington_County%2C_New_Jersey.jpg",
     "query": "Ritz Cheese Sandwich Crackers",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_020.jpg",
     "status": "downloaded"
   },
   {
@@ -249,6 +289,8 @@
     "query": "Ritz Peanut Butter Sandwich Crackers",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_021.jpg",
     "status": "downloaded"
   },
   {
@@ -256,11 +298,13 @@
     "goods_name": "趣多多巧克力曲奇 95g",
     "file_name": "goods_022.jpg",
     "image_url": "/uploads/goods/goods_022.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/2020-04-02_04_30_12_An_Original_Chips_Ahoy%21_chocolate_chip_cookie_in_the_Franklin_Farm_section_of_Oak_Hill%2C_Fairfax_County%2C_Virginia.jpg",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/004/400/003/2197/front_en.50.400.jpg",
     "query": "Chips Ahoy Chocolate Chip Cookies",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_022.jpg",
     "status": "downloaded"
   },
   {
@@ -273,6 +317,8 @@
     "query": "Royal Dansk Butter Cookies",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_023.jpg",
     "status": "downloaded"
   },
   {
@@ -285,6 +331,8 @@
     "query": "local:25",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_024.jpg",
     "status": "downloaded"
   },
   {
@@ -292,11 +340,13 @@
     "goods_name": "丽芝士纳宝帝奶酪威化 58g",
     "file_name": "goods_025.jpg",
     "image_url": "/uploads/goods/goods_025.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Richeese_Nabati_Wafer.png",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/899/317/553/2457/front_en.18.400.jpg",
     "query": "Richeese Nabati Cheese Wafer",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_025.jpg",
     "status": "downloaded"
   },
   {
@@ -304,11 +354,13 @@
     "goods_name": "好丽友经典巧克力派 204g",
     "file_name": "goods_026.jpg",
     "image_url": "/uploads/goods/goods_026.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Orion-Choco-Pie-1.jpg",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/460/708/435/1354/front_en.47.400.jpg",
     "query": "Orion Choco Pie",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_026.jpg",
     "status": "downloaded"
   },
   {
@@ -321,6 +373,8 @@
     "query": "packaged bread snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_027.jpg",
     "status": "downloaded"
   },
   {
@@ -333,6 +387,8 @@
     "query": "local:27",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_028.jpg",
     "status": "downloaded"
   },
   {
@@ -345,6 +401,8 @@
     "query": "local:28",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_029.jpg",
     "status": "downloaded"
   },
   {
@@ -357,6 +415,8 @@
     "query": "local:29",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_030.jpg",
     "status": "downloaded"
   },
   {
@@ -369,6 +429,8 @@
     "query": "local:34",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_031.jpg",
     "status": "downloaded"
   },
   {
@@ -381,6 +443,8 @@
     "query": "local:31",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_032.jpg",
     "status": "downloaded"
   },
   {
@@ -393,6 +457,8 @@
     "query": "local:32",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_033.jpg",
     "status": "downloaded"
   },
   {
@@ -405,6 +471,8 @@
     "query": "Planters Mixed Nuts",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_034.jpg",
     "status": "downloaded"
   },
   {
@@ -417,6 +485,8 @@
     "query": "sunflower seeds roasted nuts",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_035.jpg",
     "status": "downloaded"
   },
   {
@@ -429,6 +499,8 @@
     "query": "sunflower seeds roasted nuts",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_036.jpg",
     "status": "downloaded"
   },
   {
@@ -441,6 +513,8 @@
     "query": "macadamia nuts snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_037.jpg",
     "status": "downloaded"
   },
   {
@@ -453,6 +527,8 @@
     "query": "almonds nuts snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_038.jpg",
     "status": "downloaded"
   },
   {
@@ -465,6 +541,8 @@
     "query": "local:38",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_039.jpg",
     "status": "downloaded"
   },
   {
@@ -477,6 +555,8 @@
     "query": "local:44",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_040.jpg",
     "status": "downloaded"
   },
   {
@@ -489,6 +569,8 @@
     "query": "local:40",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_041.jpg",
     "status": "downloaded"
   },
   {
@@ -501,6 +583,8 @@
     "query": "local:41",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_042.jpg",
     "status": "downloaded"
   },
   {
@@ -508,11 +592,13 @@
     "goods_name": "溜溜梅清梅 88g",
     "file_name": "goods_043.jpg",
     "image_url": "/uploads/goods/goods_043.jpg",
-    "source_name": "wikimedia",
+    "source_name": "openverse",
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Chinese_preserved_plum_snack.jpg",
     "query": "preserved plum snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_043.jpg",
     "status": "downloaded"
   },
   {
@@ -525,6 +611,8 @@
     "query": "raisins dried fruit snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_044.jpg",
     "status": "downloaded"
   },
   {
@@ -537,6 +625,8 @@
     "query": "Dove Milk Chocolate",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_045.jpg",
     "status": "downloaded"
   },
   {
@@ -544,11 +634,13 @@
     "goods_name": "费列罗榛果威化巧克力 90g",
     "file_name": "goods_046.jpg",
     "image_url": "/uploads/goods/goods_046.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/2023_Ferrero_Rocher_%283%29.jpg",
-    "query": "Ferrero Rocher",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/800/050/035/9488/front_en.168.400.jpg",
+    "query": "Ferrero Rocher 90g",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_046.jpg",
     "status": "downloaded"
   },
   {
@@ -561,6 +653,8 @@
     "query": "M and M's Peanut Chocolate",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_047.jpg",
     "status": "downloaded"
   },
   {
@@ -573,6 +667,8 @@
     "query": "Snickers Peanut Chocolate",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_048.jpg",
     "status": "downloaded"
   },
   {
@@ -585,6 +681,8 @@
     "query": "local:52",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_049.jpg",
     "status": "downloaded"
   },
   {
@@ -597,6 +695,8 @@
     "query": "local:49",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_050.jpg",
     "status": "downloaded"
   },
   {
@@ -609,6 +709,8 @@
     "query": "Haribo Goldbears",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_051.jpg",
     "status": "downloaded"
   },
   {
@@ -621,6 +723,8 @@
     "query": "fruit candy chewy",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_052.jpg",
     "status": "downloaded"
   },
   {
@@ -633,6 +737,8 @@
     "query": "local:55",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_053.jpg",
     "status": "downloaded"
   },
   {
@@ -645,6 +751,8 @@
     "query": "local:53",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_054.jpg",
     "status": "downloaded"
   },
   {
@@ -657,6 +765,8 @@
     "query": "Want Want Milk Pudding",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_055.jpg",
     "status": "downloaded"
   },
   {
@@ -669,6 +779,8 @@
     "query": "local:54",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_056.jpg",
     "status": "downloaded"
   },
   {
@@ -681,6 +793,8 @@
     "query": "local:59",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_057.jpg",
     "status": "downloaded"
   },
   {
@@ -693,6 +807,8 @@
     "query": "beef jerky snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_058.jpg",
     "status": "downloaded"
   },
   {
@@ -705,6 +821,8 @@
     "query": "beef jerky snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_059.jpg",
     "status": "downloaded"
   },
   {
@@ -717,6 +835,8 @@
     "query": "local:57",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_060.jpg",
     "status": "downloaded"
   },
   {
@@ -724,11 +844,13 @@
     "goods_name": "卫龙大面筋 106g",
     "file_name": "goods_061.jpg",
     "image_url": "/uploads/goods/goods_061.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Weilong_spicy_gluten.jpg",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/693/528/441/2178/front_en.3.400.jpg",
     "query": "Weilong Spicy Gluten",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_061.jpg",
     "status": "downloaded"
   },
   {
@@ -741,6 +863,8 @@
     "query": "local:61",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_062.jpg",
     "status": "downloaded"
   },
   {
@@ -753,6 +877,8 @@
     "query": "local:62",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_063.jpg",
     "status": "downloaded"
   },
   {
@@ -765,6 +891,8 @@
     "query": "local:65",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_064.jpg",
     "status": "downloaded"
   },
   {
@@ -777,6 +905,8 @@
     "query": "seafood squid snack",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_065.jpg",
     "status": "downloaded"
   },
   {
@@ -789,6 +919,8 @@
     "query": "local:64",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_066.jpg",
     "status": "downloaded"
   },
   {
@@ -801,6 +933,8 @@
     "query": "Coca Cola 330ml",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_067.jpg",
     "status": "downloaded"
   },
   {
@@ -813,6 +947,8 @@
     "query": "Pepsi Cola",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_068.jpg",
     "status": "downloaded"
   },
   {
@@ -820,11 +956,13 @@
     "goods_name": "雪碧柠檬味汽水 330ml",
     "file_name": "goods_069.jpg",
     "image_url": "/uploads/goods/goods_069.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Sprite_lemon_lime_1.jpg",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/890/176/403/1250/front_en.3.400.jpg",
     "query": "Sprite Lemon Soda",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_069.jpg",
     "status": "downloaded"
   },
   {
@@ -837,6 +975,8 @@
     "query": "Fanta Orange 330ml",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_070.jpg",
     "status": "downloaded"
   },
   {
@@ -849,6 +989,8 @@
     "query": "Master Kong Iced Tea",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_071.jpg",
     "status": "downloaded"
   },
   {
@@ -861,6 +1003,8 @@
     "query": "tea juice bottled drink",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_072.jpg",
     "status": "downloaded"
   },
   {
@@ -873,6 +1017,8 @@
     "query": "juice bottled drink",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_073.jpg",
     "status": "downloaded"
   },
   {
@@ -885,6 +1031,8 @@
     "query": "Vitasoy Lemon Tea",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_074.jpg",
     "status": "downloaded"
   },
   {
@@ -897,6 +1045,8 @@
     "query": "local:74",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_075.jpg",
     "status": "downloaded"
   },
   {
@@ -909,6 +1059,8 @@
     "query": "local:75",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_076.jpg",
     "status": "downloaded"
   },
   {
@@ -916,11 +1068,13 @@
     "goods_name": "红牛维生素风味饮料 250ml",
     "file_name": "goods_077.jpg",
     "image_url": "/uploads/goods/goods_077.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Red_Bull_Energy_Drink_GMC_Truck.jpg",
-    "query": "Red Bull Energy Drink",
+    "source_name": "open_food_facts",
+    "source_url": "https://images.openfoodfacts.org/images/products/000/009/016/2909/front_en.122.400.jpg",
+    "query": "Red Bull Energy Drink 250ml",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_077.jpg",
     "status": "downloaded"
   },
   {
@@ -933,6 +1087,8 @@
     "query": "local:79",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_078.jpg",
     "status": "downloaded"
   },
   {
@@ -940,11 +1096,13 @@
     "goods_name": "雀巢丝滑拿铁咖啡 268ml",
     "file_name": "goods_079.jpg",
     "image_url": "/uploads/goods/goods_079.jpg",
-    "source_name": "wikimedia",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/HK_HV_%E8%B7%91%E9%A6%AC%E5%9C%B0_Happy_Valley_%E9%BB%83%E6%B3%A5%E6%B6%8C%E9%81%93_Wong_Nai_Chung_Road_shop_7-Eleven_store_goods_bottled_coffee_n_canned_drinks_July_2020_SS2.jpg",
+    "source_name": "openverse",
+    "source_url": "https://live.staticflickr.com/3250/3134143883_f761dd3587_b.jpg",
     "query": "coffee bottled drink",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_079.jpg",
     "status": "downloaded"
   },
   {
@@ -952,11 +1110,13 @@
     "goods_name": "农夫山泉饮用天然水 550ml",
     "file_name": "goods_080.jpg",
     "image_url": "/uploads/goods/goods_080.jpg",
-    "source_name": "openverse",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Bludenz-Fohrenburg-old_sparkling_water_bottles-01ASD.jpg",
-    "query": "sparkling water bottle",
-    "fallback_used": true,
+    "source_name": "wikimedia",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Wahaha_Purified_Drinking_Water_and_other_brands_at_a_store_in_Xietang%2C_Suzhou-20240309.jpg",
+    "query": "Nongfu Spring Water",
+    "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_080.jpg",
     "status": "downloaded"
   },
   {
@@ -965,10 +1125,12 @@
     "file_name": "goods_081.jpg",
     "image_url": "/uploads/goods/goods_081.jpg",
     "source_name": "wikimedia",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Kangso_Mineral_Water_Bottling_Factory_-_03.jpg",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Kangso_Mineral_Water_Bottling_Factory_-_01.jpg",
     "query": "mineral water bottle",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_081.jpg",
     "status": "downloaded"
   },
   {
@@ -976,11 +1138,13 @@
     "goods_name": "巴黎水原味气泡水 330ml",
     "file_name": "goods_082.jpg",
     "image_url": "/uploads/goods/goods_082.jpg",
-    "source_name": "wikimedia",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Sparkling-bottled-water.jpg",
+    "source_name": "openverse",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Bludenz-Fohrenburg-old_sparkling_water_bottles-02ASD.jpg",
     "query": "sparkling water bottle",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_082.jpg",
     "status": "downloaded"
   },
   {
@@ -993,6 +1157,8 @@
     "query": "local:86",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_083.jpg",
     "status": "downloaded"
   },
   {
@@ -1005,6 +1171,8 @@
     "query": "local:83",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_084.jpg",
     "status": "downloaded"
   },
   {
@@ -1013,10 +1181,12 @@
     "file_name": "goods_085.jpg",
     "image_url": "/uploads/goods/goods_085.jpg",
     "source_name": "wikimedia",
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Non-Dairy_Milk_%285082987978%29.jpg",
+    "source_url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Soy_Non-Dairy_Milk_%285082414499%29.jpg",
     "query": "soy milk drink carton",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_085.jpg",
     "status": "downloaded"
   },
   {
@@ -1029,6 +1199,8 @@
     "query": "Want Want Milk Drink",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_086.jpg",
     "status": "downloaded"
   },
   {
@@ -1041,6 +1213,8 @@
     "query": "Yakult Probiotic Drink",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_087.jpg",
     "status": "downloaded"
   },
   {
@@ -1053,6 +1227,8 @@
     "query": "local:87",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_088.jpg",
     "status": "downloaded"
   },
   {
@@ -1065,6 +1241,8 @@
     "query": "local:88",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_089.jpg",
     "status": "downloaded"
   },
   {
@@ -1077,6 +1255,8 @@
     "query": "local:92",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_090.jpg",
     "status": "downloaded"
   },
   {
@@ -1089,6 +1269,8 @@
     "query": "local:90",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_091.jpg",
     "status": "downloaded"
   },
   {
@@ -1101,6 +1283,8 @@
     "query": "Lipton Hong Kong Milk Tea",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_092.jpg",
     "status": "downloaded"
   },
   {
@@ -1113,6 +1297,8 @@
     "query": "local:97",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_093.jpg",
     "status": "downloaded"
   },
   {
@@ -1125,6 +1311,8 @@
     "query": "local:93",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_094.jpg",
     "status": "downloaded"
   },
   {
@@ -1137,6 +1325,8 @@
     "query": "local:94",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_095.jpg",
     "status": "downloaded"
   },
   {
@@ -1149,6 +1339,8 @@
     "query": "local:95",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_096.jpg",
     "status": "downloaded"
   },
   {
@@ -1161,6 +1353,8 @@
     "query": "Pocky Chocolate",
     "fallback_used": false,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_097.jpg",
     "status": "downloaded"
   },
   {
@@ -1173,6 +1367,8 @@
     "query": "local:97",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_098.jpg",
     "status": "downloaded"
   },
   {
@@ -1185,6 +1381,8 @@
     "query": "local:98",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_099.jpg",
     "status": "downloaded"
   },
   {
@@ -1197,6 +1395,8 @@
     "query": "local:99",
     "fallback_used": true,
     "override_used": false,
+    "local_file_exists": true,
+    "effective_image_url": "/uploads/goods/goods_100.jpg",
     "status": "downloaded"
   }
 ]

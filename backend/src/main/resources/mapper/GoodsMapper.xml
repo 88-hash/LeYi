@@ -3,9 +3,16 @@
 <mapper namespace="com.leyi.mapper.GoodsMapper">
     
     <select id="findList" resultType="com.leyi.entity.Goods">
-        SELECT g.*, c.name as category_name 
+        SELECT g.*, c.name as category_name, COALESCE(sales.total_quantity, 0) as sales_count
         FROM goods g 
         LEFT JOIN category c ON g.category_id = c.id
+        LEFT JOIN (
+            SELECT oi.goods_id, SUM(oi.quantity) as total_quantity
+            FROM order_item oi
+            JOIN `order` o ON oi.order_id = o.id
+            WHERE o.status = 'completed'
+            GROUP BY oi.goods_id
+        ) sales ON sales.goods_id = g.id
         WHERE g.is_deleted = 0
         <choose>
             <when test="categoryIds != null and categoryIds.size() > 0">
@@ -24,7 +31,21 @@
         <if test="isOnSale != null">
             AND g.is_on_sale = #{isOnSale}
         </if>
-        ORDER BY g.created_at DESC
+        ORDER BY
+        <choose>
+            <when test="sort == 'sales_desc'">
+                COALESCE(sales.total_quantity, 0) DESC, g.created_at DESC
+            </when>
+            <when test="sort == 'price_asc'">
+                g.price ASC, g.created_at DESC
+            </when>
+            <when test="sort == 'price_desc'">
+                g.price DESC, g.created_at DESC
+            </when>
+            <otherwise>
+                g.created_at DESC
+            </otherwise>
+        </choose>
         <if test="offset != null and limit != null">
             LIMIT #{offset}, #{limit}
         </if>

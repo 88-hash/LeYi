@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Set;
 import java.util.UUID;
 import javax.imageio.ImageIO;
@@ -42,14 +43,12 @@ public class FileController {
         String suffix = originalFilename.substring(originalFilename.lastIndexOf(".")).toLowerCase();
         String newFilename = UUID.randomUUID().toString().replace("-", "") + suffix;
 
-        String dir = uploadPath + "/goods/";
-        File dirFile = new File(dir);
-        if (!dirFile.exists() && !dirFile.mkdirs()) {
-            throw new BusinessException(500, "创建上传目录失败");
-        }
+        Path goodsDir = Path.of(uploadPath).toAbsolutePath().normalize().resolve("goods");
+        Path targetFile = goodsDir.resolve(newFilename);
 
         try {
-            file.transferTo(new File(dir + newFilename));
+            Files.createDirectories(goodsDir);
+            file.transferTo(targetFile);
             return Result.success("/uploads/goods/" + newFilename);
         } catch (IOException e) {
             throw new BusinessException(500, "上传失败");

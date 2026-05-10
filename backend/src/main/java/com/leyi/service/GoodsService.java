@@ -25,7 +25,7 @@ public class GoodsService {
     @Autowired
     private CategoryMapper categoryMapper;
 
-    public PageResult<Goods> getList(Long categoryId, String keyword, Integer isOnSale, Boolean includeChildren, Integer pageNum, Integer pageSize) {
+    public PageResult<Goods> getList(Long categoryId, String keyword, String sort, Integer isOnSale, Boolean includeChildren, Integer pageNum, Integer pageSize) {
         int offset = (pageNum - 1) * pageSize;
         List<Long> categoryIds = null;
 
@@ -38,7 +38,7 @@ public class GoodsService {
             }
         }
 
-        List<Goods> list = goodsMapper.findList(categoryId, categoryIds, keyword, isOnSale, offset, pageSize);
+        List<Goods> list = goodsMapper.findList(categoryId, categoryIds, keyword, sort, isOnSale, offset, pageSize);
         Long total = goodsMapper.countList(categoryId, categoryIds, keyword, isOnSale);
         return PageResult.of(list, total, pageNum, pageSize);
     }

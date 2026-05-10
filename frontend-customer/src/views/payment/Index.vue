@@ -11,7 +11,7 @@
         <section class="payment-main">
           <article class="payment-hero leyi-panel-strong">
             <div class="hero-copy">
-              <p class="hero-tag">模拟付款</p>
+             
               <h1>确认本次支付信息</h1>
               <p class="hero-tip">选择微信支付或支付宝支付后确认付款，系统会立即生成订单和取货码。</p>
             </div>
@@ -56,8 +56,8 @@
                 <p><span>顾客姓名</span><strong>{{ displayName }}</strong></p>
                 <p><span>联系电话</span><strong>{{ displayPhone }}</strong></p>
                 <p><span>取货方式</span><strong>到店自提</strong></p>
-                <p><span>取货门店</span><strong>LeYi零食店 - XX市XX区XX路XX号</strong></p>
-                <p><span>营业时间</span><strong>09:00 - 21:00</strong></p>
+                <p><span>取货门店</span><strong>LeYi零食店 - 鞍山市立山区千山中路185号</strong></p>
+                <p><span>营业时间</span><strong>09:00 - 22:00</strong></p>
               </div>
             </article>
 

@@ -34,6 +34,7 @@ Thumbs.db
 # ====== Env / secrets ======
 .env
 *.local
+backend/config/application.yml
 # --- frontend deps (爆量来源) ---
 frontend-admin/node_modules/
 frontend-customer/node_modules/

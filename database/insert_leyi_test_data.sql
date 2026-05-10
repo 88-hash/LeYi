@@ -2,6 +2,7 @@
 -- Generated from database/rebuild_leyi_catalog_seed.py and leyi_catalog_seed.json
 
 USE leyi_snack;
+SET NAMES utf8mb4;
 
 SET FOREIGN_KEY_CHECKS = 0;
 

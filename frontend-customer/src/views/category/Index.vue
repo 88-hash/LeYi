@@ -77,9 +77,9 @@
             </div>
           </header>
 
-          <div v-if="sortedGoodsList.length > 0" class="goods-grid">
+          <div v-if="displayGoodsList.length > 0" class="goods-grid">
             <article
-              v-for="(goods, index) in sortedGoodsList"
+              v-for="(goods, index) in displayGoodsList"
               :key="goods.id"
               class="goods-card"
               @click="goDetail(goods.id)"
@@ -144,7 +144,7 @@ const sortBy = ref('default')
 
 const sortOptions = [
   { label: '综合推荐', value: 'default' },
-  { label: '销量优先', value: 'sales' },
+  { label: '销量优先', value: 'sales_desc' },
   { label: '价格从低到高', value: 'price_asc' },
   { label: '价格从高到低', value: 'price_desc' }
 ]
@@ -169,24 +169,12 @@ const currentGoodsParams = computed(() => {
     pageNum: pageNum.value,
     pageSize: pageSize.value,
     isOnSale: 1,
+    sort: sortBy.value,
     includeChildren: !activeSubCategory.value
   }
 })
 
-const sortedGoodsList = computed(() => {
-  const source = [...goodsList.value]
-  if (sortBy.value === 'price_asc') {
-    return source.sort((a, b) => Number(a.price || 0) - Number(b.price || 0))
-  }
-  if (sortBy.value === 'price_desc') {
-    return source.sort((a, b) => Number(b.price || 0) - Number(a.price || 0))
-  }
-  if (sortBy.value === 'sales') {
-    const readSales = (item) => Number(item.sales || item.saleCount || item.salesVolume || 0)
-    return source.sort((a, b) => readSales(b) - readSales(a))
-  }
-  return source
-})
+const displayGoodsList = computed(() => goodsList.value)
 
 const applyRouteCategory = () => {
   if (!categories.value.length) return
@@ -329,6 +317,14 @@ watch(
 )
 
 watch(pageNum, () => {
+  fetchGoods()
+})
+
+watch(sortBy, () => {
+  if (pageNum.value !== 1) {
+    pageNum.value = 1
+    return
+  }
   fetchGoods()
 })
 

@@ -21,6 +21,7 @@ SEED_PATH = SCRIPT_DIR / "leyi_catalog_seed.json"
 SQL_PATH = SCRIPT_DIR / "insert_leyi_test_data.sql"
 MANIFEST_JSON_PATH = SCRIPT_DIR / "leyi_image_manifest.json"
 MANIFEST_CSV_PATH = SCRIPT_DIR / "leyi_image_manifest.csv"
+MISSING_REPORT_PATH = SCRIPT_DIR / "leyi_missing_images.json"
 DEFAULT_OUTPUT_DIR = PROJECT_ROOT / "backend" / "uploads" / "goods"
 
 HTTP_TIMEOUT = 6
@@ -75,6 +76,10 @@ STOP_TOKENS = {
 
 def ensure_parent(path: Path) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
+
+
+def has_local_asset(path: Path) -> bool:
+    return path.is_file() and path.stat().st_size > 0
 
 
 def tokenize_text(text: str) -> list[str]:
@@ -476,6 +481,8 @@ def write_manifest(records: list[dict], json_path: Path, csv_path: Path) -> None
                 "query",
                 "fallback_used",
                 "override_used",
+                "local_file_exists",
+                "effective_image_url",
                 "status",
             ],
         )
@@ -491,6 +498,58 @@ def read_manifest(json_path: Path) -> list[dict]:
 
 def normalize_manifest(records: list[dict]) -> list[dict]:
     return sorted(records, key=lambda row: int(row["goods_id"]))
+
+
+def build_manifest_row(product: dict, existing: dict | None = None) -> dict:
+    row = {
+        "goods_id": product["id"],
+        "goods_name": product["name"],
+        "file_name": product["file_name"],
+        "image_url": product["image_url"],
+        "source_name": "",
+        "source_url": "",
+        "query": "",
+        "fallback_used": False,
+        "override_used": False,
+        "local_file_exists": False,
+        "effective_image_url": "",
+        "status": "missing",
+    }
+    if existing:
+        row.update(existing)
+    return row
+
+
+def finalize_manifest(products: list[dict], manifest_map: dict[int, dict], output_dir: Path) -> list[dict]:
+    rows: list[dict] = []
+    for product in products:
+        goods_id = int(product["id"])
+        row = build_manifest_row(product, manifest_map.get(goods_id))
+        local_file = output_dir / row["file_name"]
+        file_exists = has_local_asset(local_file)
+        row["local_file_exists"] = file_exists
+        row["effective_image_url"] = product["image_url"] if file_exists else ""
+        if not file_exists and row["status"] == "downloaded":
+            row["status"] = "missing"
+        rows.append(row)
+    return normalize_manifest(rows)
+
+
+def write_missing_report(records: list[dict], output_path: Path) -> list[dict]:
+    missing = [
+        {
+            "goods_id": row["goods_id"],
+            "goods_name": row["goods_name"],
+            "file_name": row["file_name"],
+            "expected_image_url": row["image_url"],
+            "recommended_action": "Upload a local image from the admin goods editor.",
+        }
+        for row in records
+        if not row.get("effective_image_url")
+    ]
+    ensure_parent(output_path)
+    output_path.write_text(json.dumps(missing, ensure_ascii=False, indent=2), encoding="utf-8")
+    return missing
 
 
 def backfill_missing_with_local_assets(records: list[dict], products: list[dict], output_dir: Path) -> None:
@@ -554,10 +613,14 @@ def sql_number(value: int | float) -> str:
     return f"{value:.2f}"
 
 
-def generate_sql(seed: dict, output_path: Path) -> None:
+def generate_sql(seed: dict, manifest_rows: list[dict], output_path: Path) -> None:
     top_categories = seed.get("categories", [])
     child_categories = [child for category in top_categories for child in category.get("children", [])]
     products = seed.get("products", [])
+    image_url_map = {
+        int(row["goods_id"]): row.get("effective_image_url", "")
+        for row in manifest_rows
+    }
 
     category_rows = [
         f"({category['id']}, 0, {sql_string(category['name'])}, {category['sort']})"
@@ -571,6 +634,7 @@ def generate_sql(seed: dict, output_path: Path) -> None:
 
     goods_rows = []
     for product in products:
+        effective_image_url = image_url_map.get(int(product["id"]), "")
         goods_rows.append(
             "("
             f"{product['id']}, "
@@ -580,7 +644,7 @@ def generate_sql(seed: dict, output_path: Path) -> None:
             f"{product['stock']}, "
             f"{product['safety_stock']}, "
             f"{sql_string(product['bar_code'])}, "
-            f"{sql_string(product['image_url'])}, "
+            f"{sql_string(effective_image_url)}, "
             f"{sql_string(product['description'])}, "
             f"{sql_string(product['promotion_tag'])}, "
             f"{product.get('is_on_sale', 1)}, "
@@ -590,12 +654,14 @@ def generate_sql(seed: dict, output_path: Path) -> None:
         )
 
     goods_image_rows = [
-        f"({product['id']}, {sql_string(product['image_url'])}, 1)" for product in products
+        f"({product['id']}, {sql_string(image_url_map.get(int(product['id']), ''))}, 1)"
+        for product in products
+        if image_url_map.get(int(product["id"]), "")
     ]
 
     next_category_id = max(child["id"] for child in child_categories) + 1 if child_categories else 1
     next_goods_id = max(product["id"] for product in products) + 1 if products else 1
-    next_goods_image_id = len(products) + 1
+    next_goods_image_id = len(goods_image_rows) + 1
 
     lines = [
         "-- LeYi Snack Shop rebuilt catalog test data",
@@ -624,9 +690,6 @@ def generate_sql(seed: dict, output_path: Path) -> None:
         "INSERT INTO `goods` (`id`, `category_id`, `name`, `price`, `stock`, `safety_stock`, `bar_code`, `image_url`, `description`, `promotion_tag`, `is_on_sale`, `is_deleted`, `expire_date`) VALUES",
         "  " + ",\n  ".join(goods_rows) + ";",
         "",
-        "INSERT INTO `goods_image` (`goods_id`, `image_url`, `sort`) VALUES",
-        "  " + ",\n  ".join(goods_image_rows) + ";",
-        "",
         f"ALTER TABLE `category` AUTO_INCREMENT = {next_category_id};",
         f"ALTER TABLE `goods` AUTO_INCREMENT = {next_goods_id};",
         f"ALTER TABLE `goods_image` AUTO_INCREMENT = {next_goods_image_id};",
@@ -634,6 +697,13 @@ def generate_sql(seed: dict, output_path: Path) -> None:
         "SET FOREIGN_KEY_CHECKS = 1;",
         "",
     ]
+
+    if goods_image_rows:
+        lines[lines.index(f"ALTER TABLE `category` AUTO_INCREMENT = {next_category_id};"):lines.index(f"ALTER TABLE `category` AUTO_INCREMENT = {next_category_id};")] = [
+            "INSERT INTO `goods_image` (`goods_id`, `image_url`, `sort`) VALUES",
+            "  " + ",\n  ".join(goods_image_rows) + ";",
+            "",
+        ]
 
     ensure_parent(output_path)
     output_path.write_text("\n".join(lines), encoding="utf-8")
@@ -645,6 +715,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Directory for downloaded goods images.")
     parser.add_argument("--manifest-json", type=Path, default=MANIFEST_JSON_PATH, help="Path to the JSON manifest output.")
     parser.add_argument("--manifest-csv", type=Path, default=MANIFEST_CSV_PATH, help="Path to the CSV manifest output.")
+    parser.add_argument("--missing-report", type=Path, default=MISSING_REPORT_PATH, help="Path to the missing image report output.")
     parser.add_argument("--sql-output", type=Path, default=SQL_PATH, help="Path to the generated SQL output.")
     parser.add_argument("--limit", type=int, default=0, help="Optional limit for image downloads during testing.")
     parser.add_argument("--start-id", type=int, default=0, help="Only process goods with id greater than or equal to this value.")
@@ -661,72 +732,71 @@ def main() -> int:
         raise SystemExit("--sql-only and --download-only cannot be used together.")
 
     seed = load_seed(args.seed)
-    if not args.download_only:
-        generate_sql(seed, args.sql_output)
-        print(f"[ok] SQL generated at {args.sql_output}")
-
-    if args.sql_only:
-        return 0
-
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    products = seed["products"]
-    if args.start_id:
-        products = [product for product in products if int(product["id"]) >= args.start_id]
-    if args.goods_ids:
-        goods_ids = {
-            int(part.strip())
-            for part in args.goods_ids.split(",")
-            if part.strip()
-        }
-        products = [product for product in products if int(product["id"]) in goods_ids]
-    products = products[: args.limit or None]
-
     manifest_map = {int(row["goods_id"]): row for row in read_manifest(args.manifest_json)}
-    manifest_rows: list[dict] = normalize_manifest(list(manifest_map.values()))
+    manifest_rows = finalize_manifest(seed["products"], manifest_map, args.output_dir)
     used_source_urls: set[str] = set()
     for row in manifest_rows:
         if row.get("source_url") and row["status"] == "downloaded":
             used_source_urls.add(row["source_url"])
 
-    for index, product in enumerate(products, start=1):
-        destination = args.output_dir / product["file_name"]
-        if destination.exists() and not args.overwrite:
-            manifest_map[int(product["id"])] = {
-                "goods_id": product["id"],
-                "goods_name": product["name"],
-                "file_name": destination.name,
-                "image_url": product["image_url"],
-                "source_name": manifest_map.get(int(product["id"]), {}).get("source_name", "existing"),
-                "source_url": manifest_map.get(int(product["id"]), {}).get("source_url", ""),
-                "query": manifest_map.get(int(product["id"]), {}).get("query", ""),
-                "fallback_used": manifest_map.get(int(product["id"]), {}).get("fallback_used", False),
-                "override_used": manifest_map.get(int(product["id"]), {}).get("override_used", False),
-                "status": manifest_map.get(int(product["id"]), {}).get("status", "skipped"),
+    if not args.sql_only:
+        args.output_dir.mkdir(parents=True, exist_ok=True)
+        products = seed["products"]
+        if args.start_id:
+            products = [product for product in products if int(product["id"]) >= args.start_id]
+        if args.goods_ids:
+            goods_ids = {
+                int(part.strip())
+                for part in args.goods_ids.split(",")
+                if part.strip()
             }
-            manifest_rows = normalize_manifest(list(manifest_map.values()))
+            products = [product for product in products if int(product["id"]) in goods_ids]
+        products = products[: args.limit or None]
+
+        for index, product in enumerate(products, start=1):
+            destination = args.output_dir / product["file_name"]
+            if has_local_asset(destination) and not args.overwrite:
+                manifest_map[int(product["id"])] = build_manifest_row(
+                    product,
+                    {
+                        **manifest_map.get(int(product["id"]), {}),
+                        "source_name": manifest_map.get(int(product["id"]), {}).get("source_name", "existing"),
+                        "status": manifest_map.get(int(product["id"]), {}).get("status", "existing"),
+                    },
+                )
+                manifest_rows = finalize_manifest(seed["products"], manifest_map, args.output_dir)
+                write_manifest(manifest_rows, args.manifest_json, args.manifest_csv)
+                continue
+
+            result = download_image_for_product(product, destination, used_source_urls)
+            manifest_map[int(product["id"])] = result
+            if result["source_url"]:
+                used_source_urls.add(result["source_url"])
+            manifest_rows = finalize_manifest(seed["products"], manifest_map, args.output_dir)
             write_manifest(manifest_rows, args.manifest_json, args.manifest_csv)
-            continue
+            print(
+                f"[{index:03d}/{len(products):03d}] "
+                f"{product['name']} -> {result['status']} ({result['source_name'] or 'none'})"
+            )
+            time.sleep(0.12)
 
-        result = download_image_for_product(product, destination, used_source_urls)
-        manifest_map[int(product["id"])] = result
-        if result["source_url"]:
-            used_source_urls.add(result["source_url"])
-        manifest_rows = normalize_manifest(list(manifest_map.values()))
-        write_manifest(manifest_rows, args.manifest_json, args.manifest_csv)
-        print(
-            f"[{index:03d}/{len(products):03d}] "
-            f"{product['name']} -> {result['status']} ({result['source_name'] or 'none'})"
-        )
-        time.sleep(0.12)
-
-    manifest_rows = normalize_manifest(list(manifest_map.values()))
+    manifest_rows = finalize_manifest(seed["products"], manifest_map, args.output_dir)
     backfill_missing_with_local_assets(manifest_rows, seed["products"], args.output_dir)
-    write_manifest(manifest_rows, args.manifest_json, args.manifest_csv)
-    missing = [row for row in manifest_rows if row["status"] == "missing"]
-    if missing:
-        print(f"[warn] {len(missing)} images are still missing. See {args.manifest_json}.", file=sys.stderr)
-        return 1
+    manifest_map = {int(row["goods_id"]): row for row in manifest_rows}
+    manifest_rows = finalize_manifest(seed["products"], manifest_map, args.output_dir)
 
+    write_manifest(manifest_rows, args.manifest_json, args.manifest_csv)
+    missing = write_missing_report(manifest_rows, args.missing_report)
+
+    if not args.download_only:
+        generate_sql(seed, manifest_rows, args.sql_output)
+        print(f"[ok] SQL generated at {args.sql_output}")
+
+    if missing:
+        print(
+            f"[warn] {len(missing)} images are still missing. See {args.missing_report}.",
+            file=sys.stderr,
+        )
     print(f"[ok] Image manifest written to {args.manifest_json}")
     return 0
 

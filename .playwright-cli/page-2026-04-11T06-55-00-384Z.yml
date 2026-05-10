@@ -1,0 +1,101 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - img [ref=e7]
+      - generic [ref=e9]: 乐逸零食店
+    - menubar [ref=e10]:
+      - menuitem "数据概览" [ref=e11] [cursor=pointer]:
+        - img [ref=e13]
+        - generic [ref=e15]: 数据概览
+      - menuitem "订单核销" [ref=e16] [cursor=pointer]:
+        - img [ref=e18]
+        - generic [ref=e20]: 订单核销
+      - menuitem "订单管理" [ref=e21] [cursor=pointer]:
+        - img [ref=e23]
+        - generic [ref=e25]: 订单管理
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - heading "数据概览" [level=2] [ref=e29]
+      - generic [ref=e30]:
+        - generic:
+          - generic: 店员
+        - button "退出" [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]:
+            - img [ref=e34]
+            - text: 退出
+    - generic [ref=e38]:
+      - generic [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: 今日营业额
+            - img [ref=e45]
+          - generic [ref=e49]: ¥0.00
+          - generic [ref=e50]: 较昨日 +0.00%
+        - generic [ref=e51]:
+          - generic [ref=e52]:
+            - generic [ref=e53]: 今日订单
+            - img [ref=e56]
+          - generic [ref=e58]: "0"
+          - generic [ref=e59]: 已核销 0 单
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: 核销转化率
+            - img [ref=e65]
+          - generic [ref=e67]: 0.00%
+          - generic [ref=e68]: 待取货 0 单
+        - generic [ref=e69] [cursor=pointer]:
+          - generic [ref=e70]:
+            - generic [ref=e71]: 库存预警
+            - img [ref=e74]
+          - generic [ref=e76]: "0"
+          - generic [ref=e77]: 0 件临期商品
+      - generic [ref=e78]:
+        - generic [ref=e80]:
+          - heading "营业趋势" [level=3] [ref=e81]
+          - radiogroup "radio-group" [ref=e82]:
+            - generic [ref=e83]:
+              - radio "近7天" [checked] [ref=e84]
+              - generic [ref=e85] [cursor=pointer]: 近7天
+            - generic [ref=e86]:
+              - radio "近30天" [ref=e87]
+              - generic [ref=e88] [cursor=pointer]: 近30天
+        - generic [ref=e93]:
+          - heading "热销商品 TOP10" [level=3] [ref=e94]
+          - radiogroup "radio-group" [ref=e95]:
+            - generic [ref=e96]:
+              - radio "本周" [checked] [ref=e97]
+              - generic [ref=e98] [cursor=pointer]: 本周
+            - generic [ref=e99]:
+              - radio "本月" [ref=e100]
+              - generic [ref=e101] [cursor=pointer]: 本月
+      - generic [ref=e105]:
+        - heading "订单状态分布" [level=3] [ref=e108]
+        - heading "分类销售占比" [level=3] [ref=e114]
+        - heading "时段订单分布" [level=3] [ref=e120]
+      - generic [ref=e124]:
+        - generic [ref=e125]:
+          - heading "最近订单" [level=3] [ref=e126]
+          - button "查看全部" [ref=e127] [cursor=pointer]:
+            - generic [ref=e128]: 查看全部
+        - generic [ref=e131]:
+          - table [ref=e133]:
+            - rowgroup [ref=e142]:
+              - row "订单编号 用户手机 订单金额 状态 取货码 下单时间 操作" [ref=e143]:
+                - columnheader "订单编号" [ref=e144]:
+                  - generic [ref=e145]: 订单编号
+                - columnheader "用户手机" [ref=e146]:
+                  - generic [ref=e147]: 用户手机
+                - columnheader "订单金额" [ref=e148]:
+                  - generic [ref=e149]: 订单金额
+                - columnheader "状态" [ref=e150]:
+                  - generic [ref=e151]: 状态
+                - columnheader "取货码" [ref=e152]:
+                  - generic [ref=e153]: 取货码
+                - columnheader "下单时间" [ref=e154]:
+                  - generic [ref=e155]: 下单时间
+                - columnheader "操作" [ref=e156]:
+                  - generic [ref=e157]: 操作
+          - generic [ref=e161]:
+            - table:
+              - rowgroup
+            - generic [ref=e163]: 暂无数据

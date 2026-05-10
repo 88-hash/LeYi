@@ -23,7 +23,12 @@
         <el-table :data="goodsList" v-loading="loading" border>
           <el-table-column label="商品图片" width="80">
             <template #default="{ row }">
-              <el-image :src="row.imageUrl || '/placeholder.png'" fit="cover" style="width: 50px; height: 50px; border-radius: 4px" />
+              <img
+                :src="resolveImageUrl(row.imageUrl)"
+                alt="商品图片"
+                class="goods-thumb"
+                @error="handleImageError"
+              />
             </template>
           </el-table-column>
           <el-table-column prop="name" label="商品名称" min-width="150" />
@@ -79,6 +84,7 @@ const goodsList = ref([])
 const categories = ref([])
 const filters = reactive({ categoryId: null, isOnSale: null, keyword: '' })
 const pagination = reactive({ pageNum: 1, pageSize: 10, total: 0 })
+const ADMIN_PLACEHOLDER = '/placeholder.svg'
 
 onMounted(async () => {
   const res = await getCategoryList()
@@ -103,6 +109,20 @@ const fetchGoods = async () => {
   } finally {
     loading.value = false
   }
+}
+
+const resolveImageUrl = (value) => {
+  const imageUrl = `${value || ''}`.trim()
+  return imageUrl || ADMIN_PLACEHOLDER
+}
+
+const handleImageError = (event) => {
+  const target = event?.target
+  if (!target || target.dataset.fallbackApplied === 'true') {
+    return
+  }
+  target.dataset.fallbackApplied = 'true'
+  target.src = ADMIN_PLACEHOLDER
 }
 
 const handleToggleSale = async (row) => {
@@ -138,6 +158,15 @@ const handleDelete = async (row) => {
 .text-danger {
   color: #ea4335;
   font-weight: 600;
+}
+
+.goods-thumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+  background: #f5f5f5;
 }
 </style>
 

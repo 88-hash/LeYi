@@ -1,0 +1,115 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e50]:
+    - complementary [ref=e51]:
+      - generic [ref=e52]:
+        - img [ref=e54]
+        - generic [ref=e56]: 乐逸零食店
+      - menubar [ref=e57]:
+        - menuitem "数据概览" [ref=e58] [cursor=pointer]:
+          - img [ref=e60]
+          - generic [ref=e62]: 数据概览
+        - menuitem "订单核销" [ref=e63] [cursor=pointer]:
+          - img [ref=e65]
+          - generic [ref=e67]: 订单核销
+        - menuitem "订单管理" [ref=e68] [cursor=pointer]:
+          - img [ref=e70]
+          - generic [ref=e72]: 订单管理
+        - menuitem "商品管理" [ref=e73] [cursor=pointer]:
+          - img [ref=e75]
+          - generic [ref=e77]: 商品管理
+        - menuitem "分类管理" [ref=e78] [cursor=pointer]:
+          - img [ref=e80]
+          - generic [ref=e82]: 分类管理
+        - menuitem "店员管理" [ref=e83] [cursor=pointer]:
+          - img [ref=e85]
+          - generic [ref=e87]: 店员管理
+    - main [ref=e88]:
+      - generic [ref=e89]:
+        - heading "数据概览" [level=2] [ref=e91]
+        - generic [ref=e92]:
+          - generic [ref=e93]: 店长
+          - generic:
+            - generic: 店长
+          - button "退出" [ref=e94] [cursor=pointer]:
+            - generic [ref=e95]:
+              - img [ref=e97]
+              - text: 退出
+      - generic [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e105]: 今日营业额
+              - img [ref=e108]
+            - generic [ref=e112]: ¥170.00
+            - generic [ref=e113]: 较昨日 -24.58%
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - generic [ref=e116]: 今日订单
+              - img [ref=e119]
+            - generic [ref=e121]: "5"
+            - generic [ref=e122]: 已核销 2 单
+          - generic [ref=e123]:
+            - generic [ref=e124]:
+              - generic [ref=e125]: 核销转化率
+              - img [ref=e128]
+            - generic [ref=e130]: 40.00%
+            - generic [ref=e131]: 待取货 3 单
+          - generic [ref=e132] [cursor=pointer]:
+            - generic [ref=e133]:
+              - generic [ref=e134]: 库存预警
+              - img [ref=e137]
+            - generic [ref=e139]: "4"
+            - generic [ref=e140]: 5 件临期商品
+        - generic [ref=e141]:
+          - generic [ref=e143]:
+            - heading "营业趋势" [level=3] [ref=e144]
+            - radiogroup "radio-group" [ref=e145]:
+              - generic [ref=e146]:
+                - radio "近7天" [checked] [ref=e147]
+                - generic [ref=e148] [cursor=pointer]: 近7天
+              - generic [ref=e149]:
+                - radio "近30天" [ref=e150]
+                - generic [ref=e151] [cursor=pointer]: 近30天
+          - generic [ref=e157]:
+            - heading "热销商品 TOP10" [level=3] [ref=e158]
+            - radiogroup "radio-group" [ref=e159]:
+              - generic [ref=e160]:
+                - radio "本周" [checked] [ref=e161]
+                - generic [ref=e162] [cursor=pointer]: 本周
+              - generic [ref=e163]:
+                - radio "本月" [ref=e164]
+                - generic [ref=e165] [cursor=pointer]: 本月
+        - generic [ref=e170]:
+          - heading "订单状态分布" [level=3] [ref=e173]
+          - heading "分类销售占比" [level=3] [ref=e180]
+          - heading "时段订单分布" [level=3] [ref=e187]
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - heading "最近订单" [level=3] [ref=e194]
+            - button "查看全部" [ref=e195] [cursor=pointer]:
+              - generic [ref=e196]: 查看全部
+          - generic [ref=e199]:
+            - table [ref=e201]:
+              - rowgroup [ref=e210]:
+                - row "订单编号 用户手机 订单金额 状态 取货码 下单时间 操作" [ref=e211]:
+                  - columnheader "订单编号" [ref=e212]:
+                    - generic [ref=e213]: 订单编号
+                  - columnheader "用户手机" [ref=e214]:
+                    - generic [ref=e215]: 用户手机
+                  - columnheader "订单金额" [ref=e216]:
+                    - generic [ref=e217]: 订单金额
+                  - columnheader "状态" [ref=e218]:
+                    - generic [ref=e219]: 状态
+                  - columnheader "取货码" [ref=e220]:
+                    - generic [ref=e221]: 取货码
+                  - columnheader "下单时间" [ref=e222]:
+                    - generic [ref=e223]: 下单时间
+                  - columnheader "操作" [ref=e224]:
+                    - generic [ref=e225]: 操作
+            - generic [ref=e229]:
+              - table:
+                - rowgroup
+              - generic [ref=e231]: 暂无数据
+  - alert [ref=e232]:
+    - img [ref=e234]
+    - paragraph [ref=e236]: 登录成功

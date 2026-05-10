@@ -62,7 +62,7 @@
       <div class="section-head">
         <div>
           <h2 class="leyi-title">当下流行</h2>
-          <p class="leyi-subtitle">LeYi 用户本周高频加购商品</p>
+          <p class="leyi-subtitle">LeYi 用户累计热销商品</p>
         </div>
       </div>
       <div class="goods-grid">
@@ -136,8 +136,7 @@ const categories = ref([])
 const goodsList = ref([])
 const newGoodsList = ref([])
 
-const heroVisual =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCeWyoZG603NJp-FejEepUMEc3ySTM_lRvSXKoFe5mSz_JJTzcWuGC_xwdlksCJxpusum5w0YfNKOHa9sb0hhlyeVVb-WvycTKrwo5v694IVMs_asmwnhpvznOJidassfBCSNlXM3Ggl8VnJX3v_kQTuSDHoNBK0349iWQT-TCqnYO-49OCafjjEO03HyBtbyY-oavigY4vj3_YQ4EB6v25ISFH6VMTwrSI9K1kmpeL-ljlL0F7xeXX1gPdz0vmZRd6JuEPgADbWLCe'
+const heroVisual = '/hero-snacks.svg'
 
 const categoryAccent = ['#f5d94d', '#f5b8d8', '#b8e4f7', '#c9efd7']
 const cardPalette = ['#faf2d4', '#f7e9f1', '#e8f4fa', '#ecf7ed']
@@ -164,7 +163,7 @@ onMounted(async () => {
     const catRes = await getCategoryList()
     categories.value = catRes.data || []
 
-    const goodsRes = await getGoodsList({ pageNum: 1, pageSize: 12, isOnSale: 1 })
+    const goodsRes = await getGoodsList({ pageNum: 1, pageSize: 12, isOnSale: 1, sort: 'sales_desc' })
     goodsList.value = goodsRes.data?.list || []
 
     const newRes = await getGoodsList({ pageNum: 1, pageSize: 4, isOnSale: 1 })
